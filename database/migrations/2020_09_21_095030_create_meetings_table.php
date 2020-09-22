@@ -18,7 +18,7 @@ class CreateMeetingsTable extends Migration
             $table->integer("year");
             $table->integer("week_number");
             $table->integer("km");
-            $table->text("comment");
+            $table->text("comment")->nullable();
             $table->timestamps();
         });
     }

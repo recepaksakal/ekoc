@@ -18,7 +18,7 @@ class CreateRoutesTable extends Migration
             $table->date("date");
             $table->string("title");
             $table->integer("km");
-            $table->text("comment");
+            $table->text("comment")->nullable();
             $table->timestamps();
         });
     }

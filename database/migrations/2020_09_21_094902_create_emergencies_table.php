@@ -17,8 +17,7 @@ class CreateEmergenciesTable extends Migration
             $table->id();
             $table->integer("rider_id");
             $table->string("name");
-            $table->string("surname");
-            $table->string("phone", 10);
+            $table->integer("phone");
             $table->text("address");
             $table->timestamps();
         });

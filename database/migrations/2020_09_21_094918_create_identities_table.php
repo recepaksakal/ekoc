@@ -16,13 +16,13 @@ class CreateIdentitiesTable extends Migration
         Schema::create('identities', function (Blueprint $table) {
             $table->id();
             $table->integer("rider_id");
-            $table->integer("blood");
+            $table->enum("blood", ["0 Rh (-)", "0 Rh (+)", "A Rh (-)", "A Rh (+)", "B Rh (-)", "B Rh (+)", "AB Rh (-)", "AB Rh (+)"]);
             $table->date("born_date");
             $table->string("born_place");
-            $table->string("national_id", 11);
+            $table->bigInteger("national_id");
             $table->string("mother_name");
             $table->string("father_name");
-            $table->integer("marital_status");
+            $table->string("marital_status", 10);
             $table->timestamps();
         });
     }

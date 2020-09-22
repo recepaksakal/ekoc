@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Contacts;
+use App\Models\Riders;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -23,7 +24,11 @@ class ContactsFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'rider_id' => Riders::inRandomOrder()->first(),
+            'phone' => $this->faker->randomNumber(),
+            'address' => $this->faker->address,
+            'business_phone' => $this->faker->randomNumber(),
+            'business_address' => $this->faker->address,
         ];
     }
 }

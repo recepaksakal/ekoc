@@ -13,14 +13,4 @@ class Identities extends Model
     {
         return $this->belongsTo(Riders::class, 'rider_id', 'id');
     }
-
-    public function blood()
-    {
-        return $this->hasOne(Bloods::class, 'blood', 'id');
-    }
-
-    public function marital()
-    {
-        return $this->hasOne(Maritals::class, 'marital_status', 'id');
-    }
 }
