@@ -17,13 +17,12 @@ class CreateRidersTable extends Migration
             $table->id();
             $table->string("photo");
             $table->string("nick", 25);
-            $table->integer("km")->default(0);
             $table->string("name", 30);
             $table->string('email',50)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->string("job", 50);
+            $table->string("job", 100);
             $table->integer("level");
             $table->integer("mission");
             $table->timestamps();

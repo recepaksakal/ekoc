@@ -25,7 +25,6 @@ class RidersFactory extends Factory
         return [
             'photo' => $this->faker->imageUrl($width = 640, $height = 480, 'cats'),
             'nick' => $this->faker->words(1, true),
-            'km' => $this->faker->randomNumber(),
             'name' => $this->faker->name,
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),

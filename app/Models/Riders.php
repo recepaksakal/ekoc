@@ -9,49 +9,51 @@ class Riders extends Model
 {
     use HasFactory;
 
+    protected $with = ["identity", "contact", "emergency", "r_level", "r_mission", "motorcycles"];
+
     public function identity()
     {
-        return $this->hasOne(Identities::class, 'id', 'rider_id');
+        return $this->hasOne(Identities::class, 'rider_id', 'id');
     }
 
     public function contact()
     {
-        return $this->hasOne(Contacts::class, 'id', 'rider_id');
+        return $this->hasOne(Contacts::class, 'rider_id', 'id');
     }
 
-    public function level()
+    public function r_level()
     {
-        return $this->hasOne(Levels::class, 'level', 'id');
+        return $this->hasOne(Levels::class, 'id', 'level');
     }
 
     public function m_participation()
     {
-        return $this->hasOne(MeetingsParticipations::class, 'id', 'rider_id');
+        return $this->hasOne(MeetingsParticipations::class, 'rider_id', 'id');
     }
 
     public function r_participation()
     {
-        return $this->hasOne(RouteParticipation::class, 'id', 'rider_id');
+        return $this->hasOne(RouteParticipation::class, 'rider_id', 'id');
     }
 
     public function motorcycles()
     {
-        return $this->hasMany(Motorcycles::class, 'id', 'rider_id');
+        return $this->hasMany(Motorcycles::class, 'rider_id', 'id');
     }
 
-    public function emergencies()
+    public function emergency()
     {
-        return $this->hasMany(Emergencies::class, 'id', 'rider_id');
+        return $this->hasMany(Emergencies::class, 'rider_id', 'id');
     }
 
     public function dates()
     {
-        return $this->hasMany(Dates::class, 'id', 'rider_id');
+        return $this->hasMany(Dates::class, 'rider_id', 'id');
     }
 
-    public function missions()
+    public function r_mission()
     {
-        return $this->hasMany(Missions::class, 'mission', 'id');
+        return $this->hasMany(Missions::class, 'id', 'mission');
     }
 
     

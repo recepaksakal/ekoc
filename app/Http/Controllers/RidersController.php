@@ -14,7 +14,9 @@ class RidersController extends Controller
      */
     public function index()
     {
-        //
+        $riders = Riders::get();
+        //dd($riders);
+        return  view('riders', ["riders" => $riders]);
     }
 
     /**
@@ -23,8 +25,10 @@ class RidersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+
     {
-        //
+        return view('create_profile', ["rider" => Riders::findOrFail(1)]);
+
     }
 
     /**
@@ -35,7 +39,7 @@ class RidersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return "store";
     }
 
     /**
@@ -44,9 +48,9 @@ class RidersController extends Controller
      * @param  \App\Models\Riders  $riders
      * @return \Illuminate\Http\Response
      */
-    public function show(Riders $riders)
+    public function show($id)
     {
-        //
+        return view('profile', ["rider" => Riders::findOrFail($id)]);
     }
 
     /**

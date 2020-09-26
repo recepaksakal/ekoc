@@ -10,11 +10,13 @@
     "require": {
         "php": "^7.3",
         "fideloper/proxy": "^4.2",
+        "fortawesome/font-awesome": "^5.14",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.0",
         "laravel/tinker": "^2.0",
-        "mbezhanov/faker-provider-collection": "^1.2"
+        "mbezhanov/faker-provider-collection": "^1.2",
+        "twbs/bootstrap": "4.5.2"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
