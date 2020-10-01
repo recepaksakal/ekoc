@@ -15,7 +15,7 @@ use App\Http\Controllers\RidersController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 Route::resource('riders', RidersController::class);
