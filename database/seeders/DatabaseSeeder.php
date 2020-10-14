@@ -7,6 +7,8 @@ use App\Models\Riders;
 use App\Models\Contacts;
 use App\Models\Emergencies;
 use App\Models\Identities;
+use App\Models\Levels;
+use App\Models\Missions;
 
 
 class DatabaseSeeder extends Seeder
@@ -24,5 +26,17 @@ class DatabaseSeeder extends Seeder
         ->has(Emergencies::factory(1))
         ->has(Identities::factory(1))
         ->create();
+        $levels = ["Misafir", "Support", "Hangaround", "Prospect", "Full Patch", "2.Yıl Kıdem", "5.Yıl Kıdem", "10.Yıl Kıdem"];
+        foreach ($levels as $level) {
+            $rec = new Levels;
+            $rec->level = $level;
+            $rec->save();
+        }
+        $missions = ["Başkan", "Koordinatör", "Koç", "Disiplin", "Sayman", "Yol Kaptanı", "Çoban", "Artçı", "Sıhhiye", "Mekanik"];
+        foreach ($missions as $mission) {
+            $rec = new Missions;
+            $rec->mission = $mission;
+            $rec->save();
+        }
     }
 }
